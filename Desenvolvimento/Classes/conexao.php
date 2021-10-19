@@ -1,13 +1,13 @@
 <?php
 
-abstract class conexao{
+class ConexaoBancoDados{
 
     public function conexaoBD(){
 
         try{
-            $Con=bew PDO("mysql:host=localhost;dbname=crud","root","");
+            $Con=new PDO("mysql:host=localhost;dbname=controlevalidade","root","");
             return $Con;
-        }catch(PDOException $erro){
+        }catch(PDOException $Erro){
             return $Erro->getMessage();
         }
     }
