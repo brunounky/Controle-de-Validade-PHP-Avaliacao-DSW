@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="estilos.css">
     <title>Controle de Validade</title>
 </head>
 
