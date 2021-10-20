@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="estilos.css">
-    <title>Controle de Validade</title>
+    <title>Apagar Validade</title>
 </head>
 
 <body>
