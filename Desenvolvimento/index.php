@@ -24,11 +24,23 @@
     $Conexao=new ConexaoBancoDados();
     $Conexao->conexaoBD();
 
-    include("Classes/crudCLS.php")
+    if(isset($_POST['nomeProduto'])){
+        $sql = $pdo->prepare("INSERT INTO validade VALUES (null,?,?,?)");
+        $sql->execute(array($_POST['nomeProduto'], $_POST['validade'], $_POST['lote']));
+        echo 'produto e validade cadastrados com sucesso';
 
-    
+    }
 
 ?>
+
+<form method="post">
+    <imput type="text" name="nomeProduto">
+    <imput type="text" name="validade">
+    <imput type="text" name="lote">
+    <imput type="submit" value="cadastrar">
+</form>
+
+
 
 </body>
 </html>
