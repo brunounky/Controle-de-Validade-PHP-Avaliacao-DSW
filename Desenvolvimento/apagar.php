@@ -17,6 +17,12 @@
 
     $pdo=new PDO("mysql:host=localhost;dbname=controlevalidade","root","");
 
+    if(isset($_GET['delete'])){
+        $id = (int)$_GET['delete'];
+        $pdo->exec("DELETE FROM validade WHERE id=$id");
+        echo 'Produto foi apagado';
+    }
+
 ?>
 
 <div class="principal">
@@ -36,7 +42,7 @@ $sql->execute();
 $fetchValidade = $sql->fetchAll();
 
 foreach ($fetchValidade as $key => $value){
-    echo $value['nome'].' | '.$value['validade'].' | '.$value['lote'];
+    echo '<a href="?delete='.$value['id'].'">Apagar</a>'.$value['nome'].' | '.$value['validade'].' | '.$value['lote'];
     echo '<hr>';
 }
 
@@ -46,8 +52,7 @@ foreach ($fetchValidade as $key => $value){
 
     <div class="opcoes">
 
-    <a href="cadastrar.php">Cadastrar nova validade</a>
-    <a href="apagar.php">Apagar validades cadastradas</a>
+    <a href="index.php">Voltar para a página inicial</a>
 
     </div>
 
